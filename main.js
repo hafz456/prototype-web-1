@@ -5,7 +5,7 @@ document.querySelector(".hero-btn-2").addEventListener("click", function (e) {
 
   let current = window.pageYOffset;
   const distance = offset - current;
-  const duration = 1000; // scroll duration in ms
+  const duration = 2000; // scroll duration in ms
   const startTime = performance.now();
 
   function scrollStep(timestamp) {
@@ -22,6 +22,34 @@ document.querySelector(".hero-btn-2").addEventListener("click", function (e) {
 
   requestAnimationFrame(scrollStep);
 });
+
+const toggleBtn = document.getElementById("toggleTab");
+const modal = document.getElementById("transactionModal");
+const closeBtn = document.getElementById("closeBtn");
+const closeOverlay = document.getElementById("closeOverlay");
+
+// Function to create and render transaction list items
+
+// Open modal
+toggleBtn.addEventListener("click", (e) => {
+  // CRITICAL FIX: Prevent the <a> tag from refreshing the page
+  e.preventDefault();
+  modal.classList.add("show");
+  toggleBtn.textContent = "Close Transaction Tab";
+  toggleBtn.setAttribute("aria-expanded", "true");
+});
+
+// Close modal
+function closeModal() {
+  modal.classList.remove("show");
+  toggleBtn.textContent = "Get Started";
+  toggleBtn.setAttribute("aria-expanded", "false");
+}
+
+closeBtn.addEventListener("click", closeModal);
+closeOverlay.addEventListener("click", closeModal);
+
+// Initial setup
 
 const scroller = document.querySelector(".scroller");
 const links = scroller.querySelectorAll(".conthref");
