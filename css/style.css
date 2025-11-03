@@ -1,0 +1,431 @@
+/*universal*/
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #dedede;
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 8rem;
+}
+
+h2 {
+  font-size: 7rem;
+}
+
+h3 {
+  font-size: 6.8rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+.btn {
+  padding: 0.75rem 1.75rem;
+  height: 30px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1d1c1c;
+  text-decoration: none;
+}
+
+.btn-blck {
+  color: #e4dccf;
+  background-color: #1d1c1c;
+}
+
+.btn-blck:hover {
+  color: #1d1c1c;
+  background-color: transparent;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-trsp {
+  color: #1d1c1c;
+  background-color: transparent;
+}
+
+.btn-trsp:hover {
+  color: #e4dccf;
+  background-color: #1d1c1c;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.parg {
+  font-size: 2.2rem;
+}
+
+/*hero section*/
+.hero {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-div-btn {
+  padding-top: 2%;
+}
+
+/*advantages & about us section*/
+.advant-abt-container {
+  display: grid;
+  height: 100svh;
+  margin: 5% 0;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.box-1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+.box-2 {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.box-3 {
+  grid-row: 2;
+  grid-column: 1;
+}
+
+.box-4 {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.box-1,
+.box-3 {
+  display: flex;
+  justify-content: end;
+  text-align: end;
+}
+
+.box-2,
+.box-4 {
+  display: flex;
+  text-align: start;
+  align-items: center;
+}
+
+.box-1,
+.box-3 {
+  border-right: 1.5px solid #1d1c1c;
+  padding-right: 2%;
+}
+
+.box-2,
+.box-4 {
+  border-left: 1.5px solid #1d1c1c;
+  padding-left: 2%;
+}
+
+.advant-abt-parag {
+  padding-right: 26%;
+}
+
+/*pricing section*/
+.pricing-container {
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+}
+
+.pricing-parag {
+  margin: 0 15%;
+}
+
+/*footer section*/
+.scroller {
+  width: 100%;
+  height: 90px;
+}
+
+.scroller[data-animated="true"] {
+  position: relative;
+}
+
+.scroller[data-animated="true"] .item {
+  position: absolute;
+  left: 100%;
+  animation: scroll 20s infinite linear;
+  white-space: nowrap;
+}
+
+.scroller[data-animated="true"] .item-1 {
+  animation-delay: 0ms;
+}
+.scroller[data-animated="true"] .item-2 {
+  animation-delay: 3.3s;
+}
+.scroller[data-animated="true"] .item-3 {
+  animation-delay: 6.6s;
+}
+.scroller[data-animated="true"] .item-4 {
+  animation-delay: 9.9s;
+}
+.scroller[data-animated="true"] .item-5 {
+  animation-delay: 13.2s;
+}
+.scroller[data-animated="true"] .item-6 {
+  animation-delay: 16.5s;
+}
+
+.scroller.paused .item {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  to {
+    /* Moving exactly half the total width ensures a perfect, seamless, responsive loop */
+    left: -200px;
+  }
+}
+
+h4,
+.conthref {
+  font-size: 3.2rem;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.conthref {
+  color: #551a8b;
+}
+
+.conthref:hover {
+  color: #ff7a30;
+  font-size: 3.4rem;
+  transition: color 0.3s ease, font-size 0.3s ease;
+  transform: translateY(-2px);
+}
+
+/*dynamic setting*/
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /*universal*/
+  h3 {
+    font-size: 3.8rem;
+  }
+
+  .parg {
+    font-size: 1.2rem;
+  }
+
+  /*hero section*/
+  h1 {
+    font-size: 4.6rem;
+    padding: 0 5%;
+  }
+
+  /*advantages & about us section*/
+  .advant-abt-title {
+    padding-left: 16%;
+  }
+
+  .advant-abt-parag {
+    padding-right: 18%;
+  }
+
+  /*footer section*/
+  .scroller {
+    height: 48px;
+  }
+
+  h4,
+  .conthref {
+    font-size: 1.4rem;
+  }
+
+  .conthref:hover {
+    font-size: 1.52rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  /* styles for small phones */
+
+  /*universal*/
+  h3 {
+    font-size: 4rem;
+  }
+
+  .parg {
+    font-size: 1.4rem;
+  }
+
+  /*hero section*/
+  h1 {
+    font-size: 5.2rem;
+    padding: 0 8%;
+  }
+
+  /*advantages & about us section*/
+  .advant-abt-title {
+    padding-left: 36%;
+  }
+
+  .advant-abt-parag {
+    padding-right: 18%;
+  }
+
+  /*footer section*/
+  .scroller {
+    height: 60px;
+  }
+
+  h4,
+  .conthref {
+    font-size: 1.6rem;
+  }
+
+  .conthref:hover {
+    font-size: 1.72rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* styles for tablets */
+
+  /*universal*/
+  h3 {
+    font-size: 4.2rem;
+  }
+
+  .parg {
+    font-size: 1.6rem;
+  }
+
+  /*hero section*/
+  h1 {
+    font-size: 6.2rem;
+    padding: 0 5%;
+  }
+
+  /*advantages & about us section*/
+  .advant-abt-title {
+    padding-left: 50%;
+  }
+
+  .advant-abt-parag {
+    padding-right: 18%;
+  }
+
+  /*footer section*/
+  .scroller {
+    height: 66px;
+  }
+
+  h4,
+  .conthref {
+    font-size: 1.8rem;
+  }
+
+  .conthref:hover {
+    font-size: 1.92rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* styles for small desktops */
+
+  /*universal*/
+  h3 {
+    font-size: 4.8rem;
+  }
+
+  .parg {
+    font-size: 2rem;
+  }
+
+  /*hero section*/
+  h1 {
+    font-size: 6rem;
+  }
+
+  /*advantages & about us section*/
+  .advant-abt-parag {
+    padding-right: 18%;
+  }
+
+  /*footer section*/
+  .scroller {
+    height: 80px;
+  }
+
+  h4,
+  .conthref {
+    font-size: 2.2rem;
+  }
+
+  .conthref:hover {
+    font-size: 2.32rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) and (max-width: 1549.98px) {
+  /*universal*/
+  h3 {
+    font-size: 5.6rem;
+  }
+
+  .parg {
+    font-size: 2.2rem;
+  }
+
+  /*hero section*/
+  h1 {
+    font-size: 6.8rem;
+  }
+
+  /*advantages & about us section*/
+  .advant-abt-parag {
+    padding-right: 18%;
+  }
+
+  /*footer section*/
+  h4,
+  .conthref {
+    font-size: 2.4rem;
+  }
+
+  .conthref:hover {
+    font-size: 2.52rem;
+  }
+}
