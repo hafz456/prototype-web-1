@@ -1,6 +1,29 @@
 /*universal*/
 html {
   scroll-behavior: smooth;
+  overflow-x: none;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track (background of scrollbar) */
+::-webkit-scrollbar-track {
+  background: #dedede;
+  border-left: 2px solid #1d1c1c;
+}
+
+/* Handle (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #1d1c1c;
+  transition: color 0.3s ease;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7a30;
+  transition: color 0.3s ease;
 }
 
 body {
@@ -75,6 +98,7 @@ h4,
 .btn {
   color: #551a8b;
   display: inline-block;
+  transition: color 0.3s ease;
   transition: transform 0.3s ease;
 }
 
@@ -272,6 +296,7 @@ h4,
 #closeBtn {
   top: 1rem;
   right: 1rem;
+  display: inline-block;
   position: absolute;
   background: none;
   border: none;
@@ -280,8 +305,8 @@ h4,
   color: #1d1c1c;
   transition: color 0.3s;
   line-height: 1;
+  transition: color 0.3s ease;
   transition: transform 0.3s ease;
-  display: inline-block;
 }
 
 #closeBtn:hover {
