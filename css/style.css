@@ -421,7 +421,7 @@ input:hover {
   }
 }
 
-@media (max-width: 1549.98px) {
+@media (min-width: 576px) and (max-width: 1549.98px) {
   /*fonts*/
   h2 {
     font-size: 6rem;
@@ -446,20 +446,24 @@ input:hover {
   }
 
   h3 {
-    font-size: 3.8rem;
+    font-size: 3.2rem;
   }
 
   h1 {
-    font-size: 4.6rem;
+    font-size: 4.2rem;
+  }
+
+  h2 {
+    font-size: 5.2rem;
   }
 
   .parg {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   h4,
   .section-btn {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   /*hero section*/
@@ -467,9 +471,13 @@ input:hover {
     margin-top: 8%;
   }
 
+  .modal-content {
+    width: 260px;
+  }
+
   /*footer section*/
   .scroller {
-    height: 48px;
+    height: 36px;
   }
 }
 
