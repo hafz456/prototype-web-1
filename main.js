@@ -1,4 +1,4 @@
-document.querySelector(".hero-btn-2").addEventListener("click", function (e) {
+document.getElementById("hero-btn").addEventListener("click", function (e) {
   e.preventDefault();
   const target = document.querySelector("#pricing");
   const offset = target.getBoundingClientRect().top + window.pageYOffset;
@@ -35,14 +35,12 @@ toggleBtn.addEventListener("click", (e) => {
   // CRITICAL FIX: Prevent the <a> tag from refreshing the page
   e.preventDefault();
   modal.classList.add("show");
-  toggleBtn.textContent = "Close Transaction Tab";
   toggleBtn.setAttribute("aria-expanded", "true");
 });
 
 // Close modal
 function closeModal() {
   modal.classList.remove("show");
-  toggleBtn.textContent = "Get Started";
   toggleBtn.setAttribute("aria-expanded", "false");
 }
 
@@ -52,13 +50,7 @@ closeOverlay.addEventListener("click", closeModal);
 // Initial setup
 
 const scroller = document.querySelector(".scroller");
-const links = scroller.querySelectorAll(".conthref");
-
-addAnimation();
-
-function addAnimation() {
-  scroller.setAttribute("data-animated", true);
-}
+const links = scroller.querySelectorAll("a");
 
 links.forEach((link) => {
   link.addEventListener("mouseenter", () => {

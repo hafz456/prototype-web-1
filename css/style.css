@@ -1,7 +1,6 @@
 /*universal*/
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -9,30 +8,12 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #dedede;
-  font-family: "EB Garamond", serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-h1 {
-  font-size: 8rem;
-}
-
-h2 {
-  font-size: 7rem;
-}
-
-h3 {
-  font-size: 6.8rem;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-weight: 400;
-}
-
+/*Fonts*/
 h1,
 h2,
 h3,
@@ -41,114 +22,189 @@ p {
   margin: 0;
 }
 
-.btn {
-  padding: 0.75rem 1.75rem;
-  height: 30px;
-  width: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #1d1c1c;
-  text-decoration: none;
+h2,
+h4,
+p {
+  font-weight: 400;
 }
 
-.btn-blck {
-  color: #e4dccf;
-  background-color: #1d1c1c;
+/*Fonts-header*/
+.header-div-1 > h4 {
+  font-size: 2rem;
+  font-weight: 800;
 }
 
-.btn-blck:hover {
-  color: #1d1c1c;
-  background-color: transparent;
-  transition: color 0.3s ease, background-color 0.3s ease;
+.header-div-2 > div > a,
+.header-div-2 > h4 {
+  font-size: 1rem;
 }
 
-.btn-trsp {
-  color: #1d1c1c;
-  background-color: transparent;
+.hero-box-1 > h3 {
+  font-weight: 400;
 }
 
-.btn-trsp:hover {
-  color: #e4dccf;
-  background-color: #1d1c1c;
-  transition: color 0.3s ease, background-color 0.3s ease;
+/*Fonts-hero & (advantages & about us section)*/
+h1 {
+  font-size: 9.4rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 4.6rem;
+  font-weight: 600;
 }
 
 .parg {
-  font-size: 2.2rem;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 6.8rem;
+  font-weight: 600;
+}
+
+/*Fonts-footer*/
+h4,
+.section-btn {
+  font-size: 3.2rem;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+/*Button or <a>*/
+.btn {
+  color: #551a8b;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  color: #ff7a30;
+  transition: color 0.3s ease;
+  transition: transform 0.3s ease;
+  transform: scale(1.06);
+}
+
+/*header section*/
+.header {
+  height: 4.6svh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  background-color: #dedede;
+  border-bottom: 2px solid #1d1c1c;
+}
+
+.header-div-1,
+.header-div-2 {
+  flex: 1;
+}
+
+.header-div-1 {
+  height: 100%;
+  margin-left: 1%;
+  display: flex;
+}
+
+.header-div-2 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2rem;
+  margin-right: 1%;
+}
+
+.header-div-2 > div {
+  display: flex;
+  gap: 1rem;
 }
 
 /*hero section*/
 .hero {
   height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
-.hero-div-btn {
-  padding-top: 2%;
+.hero-box-1 {
+  grid-column: 2/8;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  text-align: end;
+}
+
+.hero-box-2 {
+  grid-column: 2/8;
+  grid-row: 3;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.hero-box-3 {
+  grid-column: 1/9;
+  grid-row: 4;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 2%;
 }
 
 /*advantages & about us section*/
 .advant-abt-container {
-  display: grid;
   height: 100svh;
-  margin: 5% 0;
-  grid-template-rows: repeat(2, auto);
-  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
 }
 
-.box-1 {
+.advant-abt-box-1 {
   grid-row: 1;
-  grid-column: 1;
 }
 
-.box-2 {
-  grid-row: 1;
-  grid-column: 2;
-}
-
-.box-3 {
+.advant-abt-box-2 {
   grid-row: 2;
-  grid-column: 1;
 }
 
-.box-4 {
-  grid-row: 2;
-  grid-column: 2;
+.advant-abt-box-3 {
+  grid-row: 3;
 }
 
-.box-1,
-.box-3 {
+.advant-abt-box-4 {
+  grid-row: 4;
+}
+
+.advant-abt-box-1,
+.advant-abt-box-3 {
+  grid-column: 2/8;
+  height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: end;
-  text-align: end;
+  align-items: end;
 }
 
-.box-2,
-.box-4 {
+.advant-abt-box-2,
+.advant-abt-box-4 {
+  grid-column: 5/8;
+  height: 100%;
+  width: 100%;
   display: flex;
-  text-align: start;
-  align-items: center;
-}
-
-.box-1,
-.box-3 {
-  border-right: 1.5px solid #1d1c1c;
-  padding-right: 2%;
-}
-
-.box-2,
-.box-4 {
-  border-left: 1.5px solid #1d1c1c;
-  padding-left: 2%;
-}
-
-.advant-abt-parag {
-  padding-right: 26%;
 }
 
 /*pricing section*/
@@ -160,11 +216,11 @@ p {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 1.2rem;
+  gap: 2rem;
 }
 
 .pricing-parag {
-  margin: 0 15%;
+  margin: 0 20%;
 }
 
 .modal {
@@ -197,71 +253,123 @@ p {
 }
 
 .modal-content {
+  height: 500px;
+  width: 400px;
   position: relative;
-  background: #dedede;
   padding: 2rem;
-  max-width: 50%;
-  width: 90%;
-  height: 80vh; /* Set height for scrollable content */
-  display: flex; /* Flex layout for header/list/footer */
+  display: flex;
   flex-direction: column;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  z-index: 2; /* Must be higher than overlay */
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  gap: 1rem;
+  background: #dedede;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  z-index: 2;
   border: 2px solid #1d1c1c;
 }
 
 /* Close Button inside Modal */
 #closeBtn {
-  position: absolute;
   top: 1rem;
   right: 1rem;
+  position: absolute;
   background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #9ca3af; /* Gray 400 */
-  transition: color 0.15s;
+  color: #1d1c1c;
+  transition: color 0.3s;
   line-height: 1;
+  transition: transform 0.3s ease;
+  display: inline-block;
 }
+
 #closeBtn:hover {
-  color: #4b5563; /* Gray 600 */
+  color: #ff7a30;
+  transition: color 0.3s ease;
+  transition: transform 0.3s ease;
+  transform: scale(1.2);
+}
+
+.modal-content-box-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+}
+
+.input-text {
+  font-size: 1.4rem;
+}
+
+.modal-content-box-3 {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-content-box-3 > p {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+/* Base input styling */
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #1d1c1c;
+  border-radius: none;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Change border color when hovered */
+input:hover {
+  transition: color 0.3s ease;
+  border-color: #ff7a30;
 }
 
 /*footer section*/
 .scroller {
   width: 100%;
   height: 90px;
-}
-
-.scroller[data-animated="true"] {
   position: relative;
+  overflow: hidden;
 }
 
-.scroller[data-animated="true"] .item {
+.item {
   position: absolute;
   left: 100%;
   animation: scroll 20s infinite linear;
   white-space: nowrap;
 }
 
-.scroller[data-animated="true"] .item-1 {
+.item-1 {
   animation-delay: 0ms;
 }
-.scroller[data-animated="true"] .item-2 {
+
+.item-2 {
   animation-delay: 3.3s;
 }
-.scroller[data-animated="true"] .item-3 {
+
+.item-3 {
   animation-delay: 6.6s;
 }
-.scroller[data-animated="true"] .item-4 {
+
+.item-4 {
   animation-delay: 9.9s;
 }
-.scroller[data-animated="true"] .item-5 {
+
+.item-5 {
   animation-delay: 13.2s;
 }
-.scroller[data-animated="true"] .item-6 {
+
+.item-6 {
   animation-delay: 16.5s;
 }
 
@@ -271,68 +379,72 @@ p {
 
 @keyframes scroll {
   to {
-    /* Moving exactly half the total width ensures a perfect, seamless, responsive loop */
     left: -200px;
   }
 }
 
-h4,
-.conthref {
-  font-size: 3.2rem;
-  flex-shrink: 0;
-  line-height: 1.2;
-}
-
-.conthref {
-  color: #551a8b;
-}
-
-.conthref:hover {
-  color: #ff7a30;
-  font-size: 3.4rem;
-  transition: color 0.3s ease, font-size 0.3s ease;
-  transform: translateY(-2px);
-}
-
 /*dynamic setting*/
+@media (max-width: 1199.98px) {
+  /*header section*/
+  .header-div-1 {
+    align-items: center;
+  }
+
+  /*advantages & about us section*/
+  .advant-abt-container {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1549.98px) {
+  /*fonts*/
+  h2 {
+    font-size: 6rem;
+  }
+}
+
 /* Extra small devices (phones, less than 576px) */
 @media (max-width: 575.98px) {
-  /*universal*/
+  /*fonts*/
+  .header-div-1 > h4 {
+    font-size: 1.2rem;
+  }
+
+  .header-div-2,
+  .header-div-2 > div {
+    gap: 0.4rem;
+  }
+
+  .header-div-2 > div > a,
+  .header-div-2 > h4 {
+    font-size: 0.8rem;
+  }
+
   h3 {
     font-size: 3.8rem;
   }
 
+  h1 {
+    font-size: 4.6rem;
+  }
+
   .parg {
+    font-size: 1rem;
+  }
+
+  h4,
+  .section-btn {
     font-size: 1.2rem;
   }
 
   /*hero section*/
-  h1 {
-    font-size: 4.6rem;
-    padding: 0 5%;
-  }
-
-  /*advantages & about us section*/
-  .advant-abt-title {
-    padding-left: 16%;
-  }
-
-  .advant-abt-parag {
-    padding-right: 18%;
+  .hero-box-3 {
+    margin-top: 8%;
   }
 
   /*footer section*/
   .scroller {
     height: 48px;
-  }
-
-  h4,
-  .conthref {
-    font-size: 1.4rem;
-  }
-
-  .conthref:hover {
-    font-size: 1.52rem;
   }
 }
 
@@ -340,42 +452,46 @@ h4,
 @media (min-width: 576px) and (max-width: 767.98px) {
   /* styles for small phones */
 
-  /*universal*/
+  /*fonts*/
+  .header-div-1 > h4 {
+    font-size: 1.4rem;
+  }
+
+  .header-div-2,
+  .header-div-2 > div {
+    gap: 0.6rem;
+  }
+
+  .header-div-2 > div > a,
+  .header-div-2 > h4 {
+    font-size: 0.92rem;
+  }
+
   h3 {
     font-size: 4rem;
   }
 
+  h1 {
+    font-size: 5.2rem;
+  }
+
   .parg {
+    font-size: 1.2rem;
+  }
+
+  h4,
+  .section-btn {
     font-size: 1.4rem;
   }
 
   /*hero section*/
-  h1 {
-    font-size: 5.2rem;
-    padding: 0 8%;
-  }
-
-  /*advantages & about us section*/
-  .advant-abt-title {
-    padding-left: 36%;
-  }
-
-  .advant-abt-parag {
-    padding-right: 18%;
+  .hero-box-3 {
+    margin-top: 5.2%;
   }
 
   /*footer section*/
   .scroller {
-    height: 60px;
-  }
-
-  h4,
-  .conthref {
-    font-size: 1.6rem;
-  }
-
-  .conthref:hover {
-    font-size: 1.72rem;
+    height: 54px;
   }
 }
 
@@ -383,42 +499,46 @@ h4,
 @media (min-width: 768px) and (max-width: 991.98px) {
   /* styles for tablets */
 
-  /*universal*/
+  /*fonts*/
+  .header-div-1 > h4 {
+    font-size: 1.6rem;
+  }
+
+  .header-div-2,
+  .header-div-2 > div {
+    gap: 0.8rem;
+  }
+
+  .header-div-2 > div > a,
+  .header-div-2 > h4 {
+    font-size: 0.94rem;
+  }
+
   h3 {
     font-size: 4.2rem;
+  }
+
+  h1 {
+    font-size: 6.2rem;
   }
 
   .parg {
     font-size: 1.6rem;
   }
 
+  h4,
+  .section-btn {
+    font-size: 1.8rem;
+  }
+
   /*hero section*/
-  h1 {
-    font-size: 6.2rem;
-    padding: 0 5%;
-  }
-
-  /*advantages & about us section*/
-  .advant-abt-title {
-    padding-left: 50%;
-  }
-
-  .advant-abt-parag {
-    padding-right: 18%;
+  .hero-box-3 {
+    margin-top: 4.6%;
   }
 
   /*footer section*/
   .scroller {
-    height: 66px;
-  }
-
-  h4,
-  .conthref {
-    font-size: 1.8rem;
-  }
-
-  .conthref:hover {
-    font-size: 1.92rem;
+    height: 64px;
   }
 }
 
@@ -426,68 +546,43 @@ h4,
 @media (min-width: 992px) and (max-width: 1199.98px) {
   /* styles for small desktops */
 
-  /*universal*/
+  /*fonts*/
   h3 {
-    font-size: 4.8rem;
+    font-size: 4rem;
+  }
+
+  h1 {
+    font-size: 6.2rem;
   }
 
   .parg {
+    font-size: 1.8rem;
+  }
+
+  h4,
+  .section-btn {
     font-size: 2rem;
-  }
-
-  /*hero section*/
-  h1 {
-    font-size: 6rem;
-  }
-
-  /*advantages & about us section*/
-  .advant-abt-parag {
-    padding-right: 18%;
   }
 
   /*footer section*/
   .scroller {
-    height: 80px;
-  }
-
-  h4,
-  .conthref {
-    font-size: 2.2rem;
-  }
-
-  .conthref:hover {
-    font-size: 2.32rem;
+    height: 72px;
   }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) and (max-width: 1549.98px) {
-  /*universal*/
+  /*fonts*/
   h3 {
-    font-size: 5.6rem;
+    font-size: 4rem;
   }
 
-  .parg {
-    font-size: 2.2rem;
-  }
-
-  /*hero section*/
   h1 {
-    font-size: 6.8rem;
+    font-size: 6.6rem;
   }
 
-  /*advantages & about us section*/
-  .advant-abt-parag {
-    padding-right: 18%;
-  }
-
-  /*footer section*/
   h4,
-  .conthref {
+  .section-btn {
     font-size: 2.4rem;
-  }
-
-  .conthref:hover {
-    font-size: 2.52rem;
   }
 }
