@@ -471,8 +471,13 @@ input:hover {
     margin-top: 8%;
   }
 
+  /*advantages & about us section*/
   .modal-content {
     width: 260px;
+  }
+
+  .input-text {
+    font-size: 1rem;
   }
 
   /*footer section*/
