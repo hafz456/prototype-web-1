@@ -421,8 +421,9 @@ input:hover {
   }
 
   /*advantages & about us section*/
-  .advant-abt-container {
-    gap: 2rem;
+  .advant-abt-box-1,
+  .advant-abt-box-3 {
+    align-items: center;
   }
 }
 
