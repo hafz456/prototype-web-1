@@ -1,115 +1,187 @@
-/*universal*/
+/* general properties */
+::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
-  overflow-x: none;
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-/* Track (background of scrollbar) */
-::-webkit-scrollbar-track {
-  background: #dedede;
-  border-left: 2px solid #1d1c1c;
-}
-
-/* Handle (the draggable part) */
-::-webkit-scrollbar-thumb {
-  background: #1d1c1c;
-  transition: color 0.3s ease;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #ff7a30;
-  transition: color 0.3s ease;
 }
 
 body {
+  background-color: white;
+  text-align: center;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  background-color: #dedede;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
 }
 
-/*Fonts*/
 h1,
 h2,
 h3,
-h4,
-p {
+h4 {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
   margin: 0;
 }
 
-h2,
-h4,
-p {
-  font-weight: 400;
+button {
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/*Fonts-header*/
-.header-div-1 > h4 {
-  font-size: 2rem;
-  font-weight: 800;
+.hero,
+.about-Product,
+.about-owner,
+.pricing {
+  width: 100%;
+  height: 100svh;
 }
 
-.header-div-2 > div > a,
-.header-div-2 > h4 {
-  font-size: 1rem;
+.hero,
+.about-Product,
+.about-owner {
+  border-bottom: 2px solid black;
 }
 
-.hero-box-1 > h3 {
-  font-weight: 400;
-}
-
-/*Fonts-hero & (advantages & about us section)*/
-h1 {
-  font-size: 9.4rem;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 4.6rem;
-  font-weight: 600;
-}
-
-.parg {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 6.8rem;
-  font-weight: 600;
-}
-
-/*Fonts-footer*/
-h4,
-.section-btn {
-  font-size: 3.2rem;
-  flex-shrink: 0;
-  line-height: 1.2;
-}
-
-/*Button or <a>*/
 .btn {
-  color: #551a8b;
-  display: inline-block;
-  transition: color 0.3s ease;
-  transition: transform 0.3s ease;
+  --text-border-shadow: black;
+  --bg: white;
+  --hover-bg: #ff4646;
+  color: var(--text-border-shadow);
+  cursor: pointer;
+  border: 2px solid var(--text-border-shadow);
+  border-radius: 4px;
+  height: 50px;
+  width: 120px;
+  background: var(--bg);
+  box-shadow: 0.12rem 0.12rem var(--text-border-shadow);
+  transition: 0.2s;
 }
 
 .btn:hover {
-  color: #ff7a30;
-  transition: color 0.3s ease;
-  transition: transform 0.3s ease;
-  transform: scale(1.06);
+  color: var(--text-border-shadow);
+  transform: translate(-0.26rem, -0.26rem);
+  background: var(--hover-bg);
+  box-shadow: 0.26rem 0.26rem var(--text-border-shadow);
 }
 
-/*header section*/
+.btn:active {
+  transform: translate(0);
+  box-shadow: none;
+}
+
+a,
+.hearder-btn {
+  color: black;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+a:hover,
+.hearder-btn:hover {
+  color: #ff4646;
+  transform: scale(1.4);
+}
+
+a:hover,
+.hearder-btn:hover {
+  transition: transform 0.2s;
+}
+
+a:active,
+.hearder-btn:active {
+  transform: scale(1);
+}
+
+/* web-scroller */
+#scroll-track {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 6px;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s;
+  pointer-events: none;
+}
+
+#scroll-pill {
+  width: 100%;
+  height: 60px;
+  background-color: black;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+
+  transition: transform 0.1s linear;
+}
+
+#scroll-track.visible {
+  transition: opacity 0.2s;
+  opacity: 1;
+}
+
+/* Loader-page section */
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  border-bottom: 2px solid black;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: transform 1s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.slide-up {
+  transform: translateY(-100%);
+  display: none;
+}
+
+.text-container {
+  position: relative;
+  text-align: center;
+}
+
+.fade-text {
+  position: absolute;
+  width: 100vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeInOut 2.5s ease-in-out forwards;
+  font-size: 2rem;
+}
+
+.fade-delay {
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* header section */
 .header {
   height: 4.6svh;
   width: 100%;
@@ -119,264 +191,234 @@ h4,
   z-index: 10;
   display: flex;
   align-items: center;
-  background-color: #dedede;
-  border-bottom: 2px solid #1d1c1c;
+  justify-content: center;
+  background-color: white;
+  border-bottom: 2px solid black;
+  text-align: start;
 }
 
-.header-div-1,
-.header-div-2 {
+.header > div {
   flex: 1;
 }
 
-.header-div-1 {
-  height: 100%;
-  margin-left: 1%;
-  display: flex;
+.header-box-1 {
+  padding-left: 8px;
 }
 
-.header-div-2 {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 2rem;
-  margin-right: 1%;
+.header-box-1 > h3 {
+  font-weight: 900;
 }
 
-.header-div-2 > div {
-  display: flex;
-  gap: 1rem;
-}
-
-/*hero section*/
-.hero {
-  height: 100svh;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-}
-
-.hero-box-1 {
-  grid-column: 2/8;
-  grid-row: 2;
-  height: 100%;
-  width: 100%;
+.header-box-2,
+.header-button-box {
   display: flex;
   justify-content: end;
-  align-items: end;
-  text-align: end;
+  gap: 0.8rem;
 }
 
-.hero-box-2 {
-  grid-column: 2/8;
-  grid-row: 3;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: start;
+.header-button-box {
   align-items: center;
+  gap: 0.6rem;
+  padding-right: 10px;
 }
 
-.hero-box-3 {
-  grid-column: 1/9;
-  grid-row: 4;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  margin-top: 2%;
-}
-
-/*advantages & about us section*/
-.advant-abt-container {
-  height: 100svh;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-}
-
-.advant-abt-box-1 {
-  grid-row: 1;
-}
-
-.advant-abt-box-2 {
-  grid-row: 2;
-}
-
-.advant-abt-box-3 {
-  grid-row: 3;
-}
-
-.advant-abt-box-4 {
-  grid-row: 4;
-}
-
-.advant-abt-box-1,
-.advant-abt-box-3 {
-  grid-column: 2/8;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: end;
-}
-
-.advant-abt-box-2,
-.advant-abt-box-4 {
-  grid-column: 5/8;
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
-
-/*pricing section*/
-.pricing-container {
-  display: flex;
-  flex-direction: column;
-  height: 100svh;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 2rem;
-}
-
-.pricing-parag {
-  margin: 0 20%;
-}
-
-.modal {
-  /* Position and visibility */
-  position: fixed;
-  inset: 0;
+.header-button-box > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
-
-  /* Initial closed state */
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.9); /* Start slightly smaller for scale transition */
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  height: 88%;
+  border-left: 2px solid black;
 }
 
-.modal.show {
-  /* Open state */
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.modal-content {
-  height: 500px;
-  width: 400px;
-  position: relative;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  background: #dedede;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  z-index: 2;
-  border: 2px solid #1d1c1c;
-}
-
-/* Close Button inside Modal */
-#closeBtn {
-  top: 1rem;
-  right: 1rem;
-  display: inline-block;
-  position: absolute;
-  background: none;
+.hearder-btn {
   border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #1d1c1c;
-  transition: color 0.3s;
-  line-height: 1;
-  transition: color 0.3s ease;
-  transition: transform 0.3s ease;
+  background-color: transparent;
 }
 
-#closeBtn:hover {
-  color: #ff7a30;
-  transition: color 0.3s ease;
-  transition: transform 0.3s ease;
-  transform: scale(1.2);
-}
-
-.modal-content-box-2 {
+/* hero section*/
+.hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.4rem;
+  gap: 2.6rem;
 }
 
-.input-text {
-  display: block; /* block makes width:100% work naturally */
-  width: 100%;
-  position: relative; /* enables left/right positioning */
-  right: 6px; /* shifts the element */
-  font-size: 1.4rem;
-  text-align: left;
+#hero-title {
+  font-size: 6.8rem;
 }
 
-.modal-content-box-3 {
-  height: 20%;
-  width: 100%;
+/* about product section */
+.about-Product {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  background-color: black;
+}
+
+.about-Product-title {
+  grid-column: 1 / span 4;
+  grid-row: 1;
+  align-self: center;
+  font-size: 4.6rem;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  height: 100%;
 }
 
-.modal-content-box-3 > p {
+.week-box {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: start;
+}
+
+.week-box h3 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  color: #222;
+}
+
+.week-box ul {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+/* about owner section */
+.about-owner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+}
+
+.about-owner-paragraph {
+  padding: 0 6%;
+  font-size: 3.6rem;
+}
+
+.about-owner > h2 {
+  font-style: italic;
+}
+
+/* pricing section */
+.pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 25% 13% 62%;
+  gap: 2px;
+  background-color: black;
+}
+
+.pricing > div {
+  background-color: white;
+}
+
+.pricing-box-1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  font-size: 4.6rem;
+}
+
+.pricing-box-1,
+.pricing-box-2,
+.pricing-box-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pricing-box-2 {
+  grid-column: 1;
+}
+
+.pricing-box-3 {
+  grid-column: 2;
+}
+
+.pricing-box-2,
+.pricing-box-3 {
+  grid-row: 2;
   font-size: 2rem;
-  font-weight: 600;
 }
 
-/* Base input styling */
-input {
+.pricing-box-4 {
+  grid-column: 1;
+}
+
+.pricing-box-5 {
+  grid-column: 2;
+}
+
+.pricing-box-4,
+.pricing-box-5 {
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-box-4 > div,
+.pricing-box-5 > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing-item-div {
+  justify-content: center;
+  text-align: start;
+  font-size: 1.2rem;
+}
+
+.pricing-price-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.6rem;
+}
+
+.pricing-price {
+  font-size: 1.6rem;
+}
+
+/* footer section */
+footer {
+  height: 4.6svh;
   width: 100%;
-  padding: 4px;
-  font-size: 16px;
-  border: 2px solid #1d1c1c;
-  border-radius: none;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Change border color when hovered */
-input:hover {
-  transition: color 0.3s ease;
-  border-color: #ff7a30;
-}
-
-/*footer section*/
 .scroller {
   width: 100%;
-  height: 90px;
+  height: 20px;
   position: relative;
   overflow: hidden;
 }
 
 .item {
   position: absolute;
-  left: 100%;
-  animation: scroll 20s infinite linear;
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  left: 114%;
   white-space: nowrap;
+  animation: scroll 20s infinite linear;
 }
 
 .item-1 {
@@ -384,23 +426,27 @@ input:hover {
 }
 
 .item-2 {
-  animation-delay: 3.3s;
+  animation-delay: 2.8s;
 }
 
 .item-3 {
-  animation-delay: 6.6s;
+  animation-delay: 5.6s;
 }
 
 .item-4 {
-  animation-delay: 9.9s;
+  animation-delay: 8.4s;
 }
 
 .item-5 {
-  animation-delay: 13.2s;
+  animation-delay: 11.2s;
 }
 
 .item-6 {
-  animation-delay: 16.5s;
+  animation-delay: 14s;
+}
+
+.item-7 {
+  animation-delay: 16.8s;
 }
 
 .scroller.paused .item {
@@ -413,220 +459,212 @@ input:hover {
   }
 }
 
-/*dynamic setting*/
-@media (max-width: 1199.98px) {
-  /*header section*/
-  .header-div-1 {
-    align-items: center;
+/* ==========================================
+   LAPTOP / SMALL MONITOR (Under 1440px)
+   ========================================== */
+@media (max-width: 1440px) {
+  #hero-title {
+    font-size: 5rem;
   }
 
-  /*advantages & about us section*/
-  .advant-abt-box-1,
-  .advant-abt-box-3 {
-    align-items: center;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 1549.98px) {
-  /*fonts*/
-  h2 {
-    font-size: 6rem;
-  }
-}
-
-/* Extra small devices (phones, less than 576px) */
-@media (max-width: 575.98px) {
-  /*fonts*/
-  .header-div-1 > h4 {
-    font-size: 1.2rem;
+  .about-owner-paragraph {
+    font-size: 2.8rem;
   }
 
-  .header-div-2,
-  .header-div-2 > div {
-    gap: 0.4rem;
+  .pricing-box-1 {
+    font-size: 4rem; /* Dropped from 4.6rem */
   }
 
-  .header-div-2 > div > a,
-  .header-div-2 > h4 {
-    font-size: 0.8rem;
+  .pricing-box-2,
+  .pricing-box-3 {
+    font-size: 1.8rem; /* Dropped from 2rem */
   }
 
-  h3 {
-    font-size: 3.2rem;
-  }
-
-  h1 {
-    font-size: 4.2rem;
-  }
-
-  h2 {
-    font-size: 5.2rem;
-  }
-
-  .parg {
-    font-size: 0.8rem;
-  }
-
-  h4,
-  .section-btn {
-    font-size: 1rem;
-  }
-
-  /*hero section*/
-  .hero-box-3 {
-    margin-top: 8%;
-  }
-
-  /*advantages & about us section*/
-  .modal-content {
-    width: 260px;
-  }
-
-  .input-text {
-    font-size: 1rem;
-  }
-
-  /*footer section*/
-  .scroller {
-    height: 36px;
+  .pricing-item-div {
+    font-size: 1.1rem;
   }
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  /* styles for small phones */
-
-  /*fonts*/
-  .header-div-1 > h4 {
-    font-size: 1.4rem;
+/* ==========================================
+   TABLET (Under 1024px)
+   ========================================== */
+@media (max-width: 1024px) {
+  #hero-title {
+    font-size: 5.5rem; /* Larger than before */
+    padding: 0 10%;
   }
 
-  .header-div-2,
-  .header-div-2 > div {
-    gap: 0.6rem;
+  .about-Product {
+    /* Change to 2 columns */
+    grid-template-columns: repeat(2, 1fr);
+    /* 1 row for title + 4 rows for 8 boxes = 5 rows total */
+    grid-template-rows: auto repeat(4, 1fr);
+
+    /* Change height to auto so we can scroll through the boxes */
+    height: auto;
+    min-height: 100svh;
   }
 
-  .header-div-2 > div > a,
-  .header-div-2 > h4 {
-    font-size: 0.92rem;
-  }
-
-  h3 {
-    font-size: 4rem;
-  }
-
-  h1 {
-    font-size: 5.2rem;
-  }
-
-  .parg {
-    font-size: 1.2rem;
-  }
-
-  h4,
-  .section-btn {
-    font-size: 1.4rem;
-  }
-
-  /*hero section*/
-  .hero-box-3 {
-    margin-top: 5.2%;
-  }
-
-  /*footer section*/
-  .scroller {
-    height: 54px;
-  }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-  /* styles for tablets */
-
-  /*fonts*/
-  .header-div-1 > h4 {
-    font-size: 1.6rem;
-  }
-
-  .header-div-2,
-  .header-div-2 > div {
-    gap: 0.8rem;
-  }
-
-  .header-div-2 > div > a,
-  .header-div-2 > h4 {
-    font-size: 0.94rem;
-  }
-
-  h3 {
-    font-size: 4.2rem;
-  }
-
-  h1 {
-    font-size: 6.2rem;
-  }
-
-  .parg {
-    font-size: 1.6rem;
-  }
-
-  h4,
-  .section-btn {
-    font-size: 1.8rem;
-  }
-
-  /*hero section*/
-  .hero-box-3 {
-    margin-top: 4.6%;
-  }
-
-  /*footer section*/
-  .scroller {
-    height: 64px;
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  /* styles for small desktops */
-
-  /*fonts*/
-  h3 {
-    font-size: 4rem;
-  }
-
-  h1 {
-    font-size: 6.2rem;
-  }
-
-  .parg {
-    font-size: 1.8rem;
-  }
-
-  h4,
-  .section-btn {
+  .about-Product-title {
+    grid-column: 1 / span 2; /* Spans both columns now */
     font-size: 2rem;
   }
 
-  /*footer section*/
-  .scroller {
-    height: 72px;
+  li,
+  ul {
+    text-align: start;
+  }
+
+  .week-box {
+    padding: 2rem 1rem;
+    align-items: start;
+  }
+
+  .about-owner-paragraph {
+    font-size: 2.6rem;
+  }
+
+  .about-owner > h2 {
+    font-size: 1.8rem;
+    padding: 0 8%;
+  }
+
+  .pricing-box-1 {
+    font-size: 3.5rem;
+  }
+  .pricing-box-2,
+  .pricing-box-3 {
+    font-size: 1.8rem;
+  }
+  .pricing-item-div {
+    font-size: 1.1rem;
   }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) and (max-width: 1549.98px) {
-  /*fonts*/
-  h3 {
-    font-size: 4rem;
+/* ==========================================
+   LARGE PHONE / SMALL TABLET (Under 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  #hero-title {
+    font-size: 4.5rem; /* Keeps it filling the screen */
+  }
+  /* Remove forced breaks so the large text can flow naturally */
+
+  #about-Product-title {
+    font-size: 3rem;
   }
 
-  h1 {
-    font-size: 6.6rem;
+  .week-box h3 {
+    font-size: 1.4rem;
   }
 
-  h4,
-  .section-btn {
-    font-size: 2.4rem;
+  .week-box ul {
+    font-size: 1rem;
+  }
+
+  .about-owner-paragraph {
+    font-size: 2.2rem;
+    padding: 0 8%;
+  }
+
+  .about-owner > h2 {
+    font-size: 1.6rem;
+    padding: 0 8%;
+  }
+
+  .pricing-box-1 {
+    font-size: 2.5rem;
+  }
+  .pricing-box-2,
+  .pricing-box-3 {
+    font-size: 1.4rem;
+  }
+
+  .pricing-item-div {
+    font-size: 0.9rem;
+    align-items: start;
+  }
+
+  ul {
+    padding: 0 12%;
+  }
+
+  .pricing-price {
+    font-size: 1.2rem;
+  }
+
+  .pricing-price-div {
+    gap: 1rem;
+  }
+}
+
+/* ==========================================
+   STANDARD PHONE (Under 480px)
+   ========================================== */
+@media (max-width: 480px) {
+  #hero-title {
+    font-size: 3.5rem; /* Large enough to be the "Hero" */
+    padding: 0 8%; /* Keeps text away from phone edges */
+  }
+
+  .hero {
+    gap: 2rem;
+  }
+
+  #about-Product-title {
+    font-size: 2.5rem;
+  }
+
+  .week-box ul {
+    font-size: 0.9rem;
+  }
+
+  .about-owner-paragraph {
+    font-size: 1.6rem; /* Standard readable size for long quotes on mobile */
+    line-height: 1.5;
+  }
+  .about-owner > h2 {
+    font-size: 1.2rem;
+  }
+
+  .pricing-box-1 {
+    font-size: 1.8rem;
+  }
+  .pricing-box-2,
+  .pricing-box-3 {
+    font-size: 1.1rem;
+  }
+
+  .pricing-item-div {
+    font-size: 1em; /* Very small but stays on 2 columns */
+  }
+
+  .pricing-price {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================
+   SMALL PHONE (Under 320px)
+   ========================================== */
+@media (max-width: 320px) {
+  #hero-title {
+    font-size: 2.8rem; /* Maximum size for tiny screens */
+    padding: 0 5%;
+  }
+
+  .about-owner-paragraph {
+    font-size: 1.4rem;
+  }
+
+  .about-owner > h2 {
+    font-size: 1rem;
+  }
+
+  .pricing-box-1 {
+    font-size: 1.5rem;
+  }
+  .pricing-item-div {
+    font-size: 0.8rem;
   }
 }
